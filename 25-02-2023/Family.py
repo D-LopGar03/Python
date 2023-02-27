@@ -39,10 +39,10 @@ for j in range(0, 6, 2):
     
 print("Listado del padre, madre e hijos: ")  
 cantidadHijos = len(cantSons) 
-for padres in range(1,7,2):
-    if padres == 0:
-        print("Padre: ", parents(0))
-        print("Madre: ", parents(1))
-        
-        for hijos in range(cantidadHijos):
-            print("Hijo: ", sons(hijos))
+for padres in range(1,7):
+
+    print("Padre: ", parents[0])
+    print("Madre: ", parents[1])
+    
+    for hijos in range(cantidadHijos):
+        print("Hijo: ", sons[hijos])
