@@ -23,6 +23,8 @@ for f in range (1):
         valor = 0
         sons1.append(valor)  
 
+print("========================================")
+
 for f in range (1):
     father = str(input("Ingrese el nombre del padre: "))
     mother = str(input("Ingrese el nombre de la madre: "))
@@ -38,6 +40,8 @@ for f in range (1):
     elif answer == "n" or answer == "N":
         valor = 0
         sons2.append(valor) 
+
+print("========================================")
 
 for f in range (1):
     father = str(input("Ingrese el nombre del padre: "))
@@ -55,32 +59,66 @@ for f in range (1):
         valor = 0
         sons3.append(valor) 
 
+print("========================================")
+
 longitud1 = len(sons1)
-print("Padre: ", parents1[0])
-print("Cantidad de hijos: ", longitud1)
+
+if sons1[0] == 0:
+    print("Padre: ", parents1[0])
+    print("Cantidad de hijos: ", sons1[0])
+else:
+    print("Padre: ", parents1[0])
+    print("Cantidad de hijos: ", longitud1)
 
 longitud2 = len(sons2)
-print("Padre: ", parents2[0])
-print("Cantidad de hijos: ", longitud2)
 
-longitud3 = len(sons2)
-print("Padre: ", parents3[0])
-print("Cantidad de hijos: ", longitud3)
+if sons2[0] == 0:
+    print("Padre: ", parents2[0])
+    print("Cantidad de hijos: ", sons2[0])
+else:
+    print("Padre: ", parents2[0])
+    print("Cantidad de hijos: ", longitud2)
+
+longitud3 = len(sons3)
+
+if sons3[0] == 0:
+    print("Padre: ", parents3[0])
+    print("Cantidad de hijos: ", sons3[0])
+else:
+    print("Padre: ", parents3[0])
+    print("Cantidad de hijos: ", longitud3)
+
+print("========================================")
 
 for f in range(1):
     print("Padre: ", parents1[f])
     print("Madre: ", parents1[f + 1])
     for g in range(longitud1):
-        print("Hijo: ", sons1[g])
+        if sons1[0] == 0:
+            print("Esta familia no tiene hijos.") 
+        else:
+            print("Hijo: ", sons1[g])
+
+print("========================================")
 
 for f in range(1):
     print("Padre: ", parents2[f])
     print("Madre: ", parents2[f + 1])
     for g in range(longitud2):
-        print("Hijo: ", sons2[g])
+        if sons2[0] == 0:
+            print("Esta familia no tiene hijos.")        
+        else:
+            print("Hijo: ", sons2[g])
+
+print("========================================")
 
 for f in range(1):
     print("Padre: ", parents3[f])
     print("Madre: ", parents3[f + 1])
     for g in range(longitud3):
-        print("Hijo: ", sons2[g])
+        if sons3[0] == 0:
+            print("Esta familia no tiene hijos.") 
+        else:
+            print("Hijo: ", sons3[g])
+
+print("========================================")
