@@ -1,5 +1,7 @@
 import random
 import os
+import threading
+import time
 
 partida = 1
 
@@ -59,7 +61,10 @@ while partida == 1:
         1. Para reiniciar
         2. Para salir    
     """)
+
     partida = int(input())
+
+    
 
 def clear():
         if os.name == "nt":
@@ -67,3 +72,4 @@ def clear():
         else:
             os.system("clear")
 clear()
+
