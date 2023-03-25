@@ -3,16 +3,18 @@ import os
 import threading
 import time
 
-partida = 1
 
-while partida == 1:
-    def clear():
+def clear():
         if os.name == "nt":
             os.system("cls")
         else:
             os.system("clear")
-    clear() 
+clear()
 
+partida = 1
+
+while partida == 1:
+    
     selectUser = input(str("Piedra, papel o tijeras: "))
     selectUserModify = selectUser.lower()
 
@@ -64,12 +66,10 @@ while partida == 1:
 
     partida = int(input())
 
-    
 
-def clear():
+    def clear():
         if os.name == "nt":
             os.system("cls")
         else:
             os.system("clear")
-clear()
-
+    clear()
