@@ -24,7 +24,7 @@ def encendido():
     if aceleramos == "s":
         acelerar()
     else:
-        apagado(acelerometro)
+        noAcelerar()
 
 def acelerar():
     acelerometro = 0
@@ -145,4 +145,14 @@ def badEnding():
         print("Ok, saliendo del juego")
         exit()
         
+def noAcelerar():
+    eleccion = str(input(f"Entonces espero hasta que decidas si apagar el coche o no: \n1). Apagar el coche.\n2). Acelerar. \n"))
+    if eleccion == "1":
+        print (Fore.GREEN, "Apagando coche")
+        estado = False
+        time.sleep(2.5)
+        print("Coche apagado con éxito, ten un buen día", Fore.RESET) 
+    else:
+        acelerar()
+
 encender() 
