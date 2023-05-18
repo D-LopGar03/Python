@@ -23,9 +23,9 @@ print(type(text)) """
 
 #Asigna la expresión 10 * 3.0 a la variable result y muestra su tipo.
 
-result = 10 * 3.0
+#result = 10 * 3.0
 
-print (result)
+#print (result)
 
 print("Sucesión de fibonacci: ")
 
