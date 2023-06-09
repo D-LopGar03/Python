@@ -2,6 +2,7 @@ import pyperclip
 import webbrowser 
 import pyautogui
 import datetime
+import time
 
 hora_actual = datetime.datetime.now().time()
 
@@ -9,9 +10,9 @@ hora_inicio_tarde = datetime.time(12, 0, 0)
 hora_inicio_noche = datetime.time(18, 0, 0)  
 
 if hora_actual < hora_inicio_tarde:
-    tiempo = "tarde"
-elif hora_actual < hora_inicio_noche:
     tiempo = "día"
+elif hora_actual < hora_inicio_noche:
+    tiempo = "tarde"
 
 
 print("Cierre de mesa")
@@ -49,11 +50,20 @@ def cierreOffice(username, tiempo):
 def openBrowser(solicitud):
     webbrowser.open_new(f"https://mesadeservicio.autonoma.edu.co/avance/crear/{solicitud}")
     documento = open("texto.txt", "r")
-    pyautogui.position(900, 30)
+    
+    for i in range(0, 15):
+        pyautogui.hotkey("tab")
+        time.sleep(0.5)
     
     for i in documento:
         pyperclip.copy(i)      
         pyautogui.hotkey("ctrl", "v")
+
+    for i in range(0, 2):
+        pyautogui.hotkey("tab")
+        time.sleep(0.5)
+    pyautogui.hotkey("enter")
+
     
 
 
