@@ -1,4 +1,4 @@
-from cierre import radicado, user, motivo, lugar, diagnostico
+from cierre import radicado, user, motivo, lugar, eleccion
 from motivos import solucion
 import webbrowser, time, datetime, pyautogui, pyperclip, os
 
@@ -44,10 +44,14 @@ def interactuarBuscador(url):
 
     time.sleep(3)
 
-    for i in range(0, 14):
+    for i in range(0, 9):
         pyautogui.hotkey('tab')
 
+    sitio(lugar)
 
+    for tab in range(0, 4):
+        pyautogui.hotkey('tab')   
+       
 def interactuarDocumento(archivo, saludo, cuerpo, despedida):
 
     interactuarBuscador(url)
@@ -60,32 +64,73 @@ def interactuarDocumento(archivo, saludo, cuerpo, despedida):
         for linea in file:
             pyperclip.copy(linea)
             pyautogui.hotkey('ctrl', 'v')
-
-    for tab in range(0, 16):
-        pyautogui.hotkey('tab')
-
-    sitio(lugar)
+    
+    for tab in range(0, 2):
+        pyautogui.hotkey('tab')   
 
 def sitio(lugar):
     if lugar == 1:
         for key in range(0, 1):
             pyautogui.hotkey('down')
+                       
     elif lugar == 2:
         for key in range(0, 2):
             pyautogui.hotkey('down')
+           
     elif lugar == 3:
         for key in range(0, 3):
             pyautogui.hotkey('down')
+           
     elif lugar == 4:
         for key in range(0, 4):
             pyautogui.hotkey('down')
+           
     elif lugar == 5:
         for key in range(0, 5):
             pyautogui.hotkey('down')
 
-def dictamen(diagnostico):
+    dictamen(eleccion)
+    
+def dictamen(eleccion):
+
+    pyautogui.hotkey('tab')
+
+    if eleccion == 1:
+        for key in range(0, 1):
+            pyautogui.hotkey('down')            
+    elif eleccion == 2:
+        for key in range(0, 1):
+            pyautogui.hotkey('down')
+    elif eleccion == 3:
+        for key in range(0, 2):
+            pyautogui.hotkey('down')
+    elif eleccion == 4:
+        for key in range(0, 3):
+            pyautogui.hotkey('down')
+    elif eleccion == 5:
+        for key in range(0, 4):
+            pyautogui.hotkey('down')
+    elif eleccion == 6:
+        for key in range(0, 5):
+            pyautogui.hotkey('down')
+    elif eleccion == 7:
+        for key in range(0, 6):
+            pyautogui.hotkey('down')
+    elif eleccion == 8:
+        for key in range(0, 7):
+            pyautogui.hotkey('down')
+    elif eleccion == 9:
+        for key in range(0, 8):
+            pyautogui.hotkey('down')   
+    elif eleccion == 10:
+        for key in range(0, 9):
+            pyautogui.hotkey('down') 
 
 horas(hora_actual, tarde, noche, motivo, archivo)
 cleanScreen()
+
+pyautogui.hotkey('enter')
+time.sleep(3)
+pyautogui.hotkey('ctrl', 'w')
 
 exit()

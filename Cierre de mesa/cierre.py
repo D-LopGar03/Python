@@ -1,5 +1,5 @@
 from funciones import *
-from motivos import incidente, medio, solucion
+from motivos import incidente, medio, diagnostico
 from colorama import Fore, Style, Back, init
 import os 
 
@@ -23,9 +23,11 @@ print(f"\n{Back.WHITE} * {Back.RESET}{Back.CYAN}{Fore.BLACK} Incidente\n\n{Fore.
 
 for i in range(1, len(incidente) + 1, 2):
 
-    print(incidente[i], end="\t\t")   
+    print(incidente[i], end="\t\t\t")
+
     if i + 1 in incidente:
         print(incidente[i + 1])
+        print("\n")
     
 motivo = int(input(f"\n\n{Back.WHITE}>{Back.RESET} "))
 
@@ -33,14 +35,25 @@ print(f"\n{Back.WHITE} * {Back.RESET}{Back.CYAN}{Fore.BLACK} Medio de atención{
 
 for place in range(1, len(medio) + 1, 2):
 
-    print(medio[place], end='\t\t')
+    print(medio[place], end='\t\t\t')
     
     if place + 1 in medio:
         print(medio[place + 1])
         print("\n")
-    else:
-        ("\n")
+    
+   
 
 lugar = int(input(f"\n\n{Back.WHITE}>{Back.RESET} "))
 
-diagnostico = 
+print(f"\n{Back.WHITE} * {Back.RESET}{Back.CYAN}{Fore.BLACK} Diagnostico{Fore.RESET}{Back.RESET}\n ")
+
+for dictam in range(1, len(diagnostico) + 1, 2):
+
+    print(diagnostico[dictam], end='\t\t\t')
+    
+    if dictam + 1 in diagnostico:
+        print(diagnostico[dictam + 1])
+    else:
+        ("\n")
+
+eleccion = int(input(f"\n\n{Back.WHITE}>{Back.RESET} "))
