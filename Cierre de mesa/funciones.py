@@ -129,8 +129,8 @@ def dictamen(eleccion):
 horas(hora_actual, tarde, noche, motivo, archivo)
 cleanScreen()
 
-pyautogui.hotkey('enter')
+""" pyautogui.hotkey('enter')
 time.sleep(3)
-pyautogui.hotkey('ctrl', 'w')
+pyautogui.hotkey('ctrl', 'w') """
 
 exit()
