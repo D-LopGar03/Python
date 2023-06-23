@@ -7,8 +7,10 @@ def obtenerDatos():
     radicado = cajaRadicado.get()
     user = cajaNombre.get()
     user = user.title()
-    opcionIncidente = comboIncidente.get()
-    opcionDiagnostico = comboDiagnostico.get()
+    opcionIncidente = comboIncidente.current() 
+    opcionIncidente += 1
+    opcionDiagnostico = comboDiagnostico.current()
+    opcionDiagnostico += 1
     recibirDatos(radicado, user, opcionIncidente, opcionDiagnostico)
 
 
@@ -31,16 +33,22 @@ labelIncidente.place(x=50, y=100)
 
 opcionesIncidente = list(incidente.values())
 llaveIncidente = list(incidente.keys())
-comboIncidente = ttk.Combobox(root, values=opcionesIncidente, width=60)
+comboIncidente = ttk.Combobox(root, values=opcionesIncidente, width=60, state="readonly")
 comboIncidente.place(x=150, y=100)
 
 labelDiagnostico = Label(root, text="Diagnostico: ")
 labelDiagnostico.place(x=50, y=125)
 
 opcionesDiagnostico = list(diagnostico.values())
-comboDiagnostico = ttk.Combobox(root, values=opcionesDiagnostico, width=60)
+comboDiagnostico = ttk.Combobox(root, values=opcionesDiagnostico, width=60, state="readonly")
 comboDiagnostico.place(x=150, y=125)
 
+labelMedio = Label(root, text="Medio: ")
+labelMedio.place(x=50, y=150)
+
+opcionesMedio = list(medio.values())
+comboMedio = ttk.Combobox(root, values=opcionesMedio, width=60, state="readonly")
+comboMedio.place(x=150, y=150)
 
 send = Button(root, text="Enviar", command=obtenerDatos)
 send.pack(side="bottom")
