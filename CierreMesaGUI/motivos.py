@@ -1,14 +1,14 @@
 incidente = {
-    "1). Activación Office",
-    "2). Equipo lento",
-    "3). Disco en riesgo",
-    "4). Equipo en mal estado (No enciende, es muy viejo, se realiza cambio)",
-    "5). Formateo del equipo",
-    "6). Conexión equipo-impresora",
-    "7). Cambio de cable de red",
-    "8). Sincronización de Google Drive",
-    "9). Traslado de equipo",
-    "10). Instalación y activación de SPSS"
+    1: "1). Activación Office",
+    2: "2). Equipo lento",
+    3: "3). Disco en riesgo",
+    4: "4). Equipo en mal estado (No enciende, es muy viejo, se realiza cambio)",
+    5: "5). Formateo del equipo",
+    6: "6). Conexión equipo-impresora",
+    7: "7). Cambio de cable de red",
+    8: "8). Sincronización de Google Drive",
+    9: "9). Traslado de equipo",
+    10: "10). Instalación y activación de SPSS"
 }
 
 diagnostico = {
