@@ -1,50 +1,58 @@
 from tkinter import *
-from tkinter import PhotoImage
+import Eleccion
 
-def main():
-    # Crear una instancia de la ventana
-    root = Tk()
-    root.geometry("800x450")
-    root.config(bg="black")
-    root.title("Piedra, Papel o Tijera")
+def llamarPiedra():
+    Eleccion.piedra()
 
-    # Cargar la imagen de la piedra
-    piedra = PhotoImage(file="images/piedra.png")
+def llamarPapel():
+    Eleccion.papel()
 
-    # Redimensionar la imagen de la piedra
+def llamarTijera():
+    Eleccion.tijera()
 
-    piedraRedimensionada = piedra.subsample(13,13)
+# Crear una instancia de la ventana
+root = Tk()
+root.resizable(0, 0)
+root.geometry("800x450")
+root.config(bg="black")
+root.title("Piedra, Papel o Tijera")
 
-    # Crear el botón con la piedra
-    botonPiedra = Button(root, image=piedraRedimensionada)
-    botonPiedra.place(x=50, y=25)
+# Cargar la imagen de la piedra
+piedra = PhotoImage(file="images/piedra.png")
 
-    # Cargar la imagen de la tijera
+# Redimensionar la imagen de la piedra
 
-    tijera = PhotoImage(file="images/tijera.png")
+piedraRedimensionada = piedra.subsample(13,13)
 
-    # Redimensionar la imagen de la tijera
+# Crear el botón con la piedra
+botonPiedra = Button(root, image=piedraRedimensionada, command=llamarPiedra)
+botonPiedra.place(x=50, y=25)
 
-    tijerRedimensionada = tijera.subsample(13,13)
+# Cargar la imagen de la tijera
 
-    # Crear el botón con la piedra
-    botonTijera = Button(root, image=tijerRedimensionada)
-    botonTijera.place(x=50, y=150)
+tijera = PhotoImage(file="images/tijera.png")
 
-    # Cargar la imagen del papel
+# Redimensionar la imagen de la tijera
 
-    papel = PhotoImage(file="images/papel.png")
+tijeraRedimensionada = tijera.subsample(13,13)
 
-    # Redimensionar la imagen del papel
+# Crear el botón con la piedra
+botonTijera = Button(root, image=tijeraRedimensionada, command=llamarTijera)
+botonTijera.place(x=50, y=150)
 
-    papelRedimensionado = papel.subsample(21, 15)
+# Cargar la imagen del papel
 
-    # Crear el boton del papel
+papel = PhotoImage(file="images/papel.png")
 
-    botonPapel = Button(root, image=papelRedimensionado)
-    botonPapel.place(x=50, y=275)
+# Redimensionar la imagen del papel
 
-    # Iniciar el bucle de eventos
-    root.mainloop()
+papelRedimensionado = papel.subsample(21, 15)
 
-main()
+# Crear el boton del papel
+
+botonPapel = Button(root, image=papelRedimensionado, command=llamarPapel)
+botonPapel.place(x=50, y=275)
+
+# Iniciar el bucle de eventos
+root.mainloop()
+
